@@ -1,11 +1,7 @@
 class Rutina {
     
-    method intensidad() {
-        return
-    }
-    method descanso(tiempo) {
-        return
-    }
+    method intensidad()
+    method descanso(tiempo)
     method caloriasAQuemar(tiempo) {
         return 100 * (tiempo - self.descanso(tiempo)) * self.intensidad()
     }
