@@ -6,10 +6,12 @@ class Persona {
     method tiempoDeEjercicio()
     method caloriasPorKiloPerdido()
     method hacerRutina(rutina)
+    method caloriasQueQuema(rutina) {
+        return rutina.caloriasAQuemar(self.tiempoDeEjercicio())
+    }
 
     method pesoPerdidoConRutina(rutina) {
-        return  (rutina.caloriasAQuemar(self.tiempoDeEjercicio()) 
-                /self.caloriasPorKiloPerdido())
+        return  self.caloriasQueQuema(rutina) / self.caloriasPorKiloPerdido()
     }
 }
 class PersonaSedentaria inherits Persona {
