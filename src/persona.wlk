@@ -23,7 +23,7 @@ class PersonaSedentaria inherits Persona {
     }
     override method hacerRutina(rutina) {
         if (peso > 50) {
-            peso -= self.pesoPerdidoConRutina(rutina)
+            peso = (peso - self.pesoPerdidoConRutina(rutina)).truncate(3)
         }
     }
 }
@@ -37,7 +37,7 @@ class PersonaAtleta inherits Persona {
     }
     override method hacerRutina(rutina) {
         if (rutina.caloriasAQuemar(self.tiempoDeEjercicio()) > 10000) {
-            peso -= self.pesoPerdidoConRutina(rutina) + 1 
+            peso = (peso - self.pesoPerdidoConRutina(rutina) + 1).truncate(3)
         }
     }
 }
